@@ -4,20 +4,26 @@
 import PackageDescription
 
 let package = Package(
-    name: "SkinSmoothingFilter",
-    products: [
-        // Products define the executables and libraries a package produces, making them visible to other packages.
-        .library(
-            name: "SkinSmoothingFilter",
-            targets: ["SkinSmoothingFilter"]),
-    ],
-    targets: [
-        // Targets are the basic building blocks of a package, defining a module or a test suite.
-        // Targets can depend on other targets in this package and products from dependencies.
-        .target(
-            name: "SkinSmoothingFilter"),
-        .testTarget(
-            name: "SkinSmoothingFilterTests",
-            dependencies: ["SkinSmoothingFilter"]),
-    ]
+  name: "SkinSmoothingFilter",
+  platforms: [
+    .iOS(.v13)
+  ],
+  products: [
+    .library(
+      name: "SkinSmoothingFilter",
+      targets: ["SkinSmoothingFilter"]),
+    .library(
+      name: "SkinSmoothingFilterDemo",
+      targets: ["SkinSmoothingFilterDemo"]),
+  ],
+  targets: [
+    .target(
+      name: "SkinSmoothingFilter"),
+    .target(
+      name: "SkinSmoothingFilterDemo",
+      dependencies: ["SkinSmoothingFilter"]),
+    .testTarget(
+      name: "SkinSmoothingFilterTests",
+      dependencies: ["SkinSmoothingFilter"]),
+  ]
 )
