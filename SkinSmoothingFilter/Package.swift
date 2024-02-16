@@ -12,16 +12,11 @@ let package = Package(
     .library(
       name: "SkinSmoothingFilter",
       targets: ["SkinSmoothingFilter"]),
-    .library(
-      name: "SkinSmoothingFilterDemo",
-      targets: ["SkinSmoothingFilterDemo"]),
   ],
   targets: [
     .target(
-      name: "SkinSmoothingFilter"),
-    .target(
-      name: "SkinSmoothingFilterDemo",
-      dependencies: ["SkinSmoothingFilter"]),
+      name: "SkinSmoothingFilter"
+    ),
     .testTarget(
       name: "SkinSmoothingFilterTests",
       dependencies: ["SkinSmoothingFilter"]),
