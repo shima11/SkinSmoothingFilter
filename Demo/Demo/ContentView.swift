@@ -1,33 +1,62 @@
 import Foundation
 import SwiftUI
 import SkinSmoothingFilter
+import PhotosUI
 
+@available(iOS 16.0, *)
 struct ContentView: View {
 
+  @State private var selectedPhotoItem: PhotosPickerItem? = nil
+  @State var originalImage: Image? = nil
   @State var edittedImage: Image? = nil
 
   var body: some View {
-    ScrollView {
-      VStack {
-        Image("sample1")
-          .resizable()
-          .scaledToFit()
-        if let edittedImage {
-          edittedImage
-            .resizable()
-            .scaledToFit()
+    NavigationView {
+      ScrollView {
+        VStack {
+
+          if let originalImage {
+            originalImage
+              .resizable()
+              .scaledToFit()
+          }
+
+          if let edittedImage {
+            edittedImage
+              .resizable()
+              .scaledToFit()
+          }
+
         }
+        .onChange(of: selectedPhotoItem) { selectedPhotoItem in
+          Task {
+            do {
+              if let data = try await selectedPhotoItem?.loadTransferable(type: Data.self) {
+                if let uiImage = UIImage(data: data) {
+                  originalImage = .init(uiImage: uiImage)
 
-        Button("Apply") {
-          guard
-            let image = UIImage(named: "sample1"),
-            let ciImage = CIImage(image: image)
-          else { return }
-          let filter = SkinSmoothingFilter()
-          filter.inputImage = ciImage
+                  let ciImage = CIImage(image: uiImage)!
 
-          if let result = filter.outputImage?.toUIImage() {
-            edittedImage = .init(uiImage: result)
+                  let filter = SkinSmoothingFilter()
+                  filter.inputImage = ciImage
+
+                  if let result = filter.outputImage?.toUIImage() {
+                    edittedImage = .init(uiImage: result)
+                  }
+                }
+              }
+            } catch {
+              print(error)
+            }
+          }
+        }
+      }
+      .navigationTitle("SkinSmoothingFilter Demo")
+      .navigationBarTitleDisplayMode(.inline)
+      .toolbar {
+        ToolbarItem(placement: .topBarTrailing) {
+          PhotosPicker(selection: $selectedPhotoItem, matching: .images) {
+            Image(systemName: "photo")
           }
         }
       }
@@ -48,5 +77,9 @@ extension CIImage {
 }
 
 #Preview {
-  ContentView()
+  if #available(iOS 16.0, *) {
+    ContentView()
+  } else {
+    EmptyView()
+  }
 }

@@ -11,7 +11,11 @@ import SwiftUI
 struct DemoApp: App {
   var body: some Scene {
     WindowGroup {
-      ContentView()
+      if #available(iOS 16.0, *) {
+        ContentView()
+      } else {
+        Text("WIP")
+      }
     }
   }
 }
