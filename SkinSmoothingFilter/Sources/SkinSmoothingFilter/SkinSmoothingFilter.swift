@@ -55,21 +55,6 @@ final class ColorOverlayBlendFilter: CIFilter {
 
   var inputImage: CIImage?
 
-  static var kernel: CIKernel = { () -> CIKernel in
-
-    let url = Bundle.module.url(
-      forResource: "default",
-      withExtension: "metallib"
-    )!
-
-    let data = try! Data(contentsOf: url)
-    let kernel = try! CIColorKernel(
-      functionName: "greenBlueOverlayBlendKernel",
-      fromMetalLibraryData: data
-    )
-    return kernel
-  }()
-
   override var outputImage : CIImage? {
     guard let input = inputImage else {
       return nil
@@ -84,6 +69,22 @@ final class ColorOverlayBlendFilter: CIFilter {
     )
     return ciImage
   }
+
+  private static var kernel: CIKernel = { () -> CIKernel in
+
+    let url = Bundle.module.url(
+      forResource: "default",
+      withExtension: "metallib"
+    )!
+
+    let data = try! Data(contentsOf: url)
+    let kernel = try! CIColorKernel(
+      functionName: "greenBlueOverlayBlendKernel",
+      fromMetalLibraryData: data
+    )
+    return kernel
+  }()
+
 }
 
 final class HighpassFilter: CIFilter {
