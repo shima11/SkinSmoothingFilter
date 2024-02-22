@@ -22,7 +22,6 @@
 		048C9DE32B7F78790029B9FE /* Demo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Demo.entitlements; sourceTree = "<group>"; };
 		048C9DE52B7F78790029B9FE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		04F51E702B7F7A8C00DE5D0D /* SkinSmoothingFilter */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = SkinSmoothingFilter; path = ../SkinSmoothingFilter; sourceTree = "<group>"; };
-		04F51E7A2B7F7E6500DE5D0D /* Filter.metallib */ = {isa = PBXFileReference; explicitFileType = "archive.metal-library"; includeInIndex = 0; path = Filter.metallib; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,7 +50,6 @@
 			isa = PBXGroup;
 			children = (
 				048C9DDA2B7F78770029B9FE /* Demo.app */,
-				04F51E7A2B7F7E6500DE5D0D /* Filter.metallib */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -106,21 +104,6 @@
 			productReference = 048C9DDA2B7F78770029B9FE /* Demo.app */;
 			productType = "com.apple.product-type.application";
 		};
-		04F51E792B7F7E6500DE5D0D /* Filter */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 04F51E7E2B7F7E6500DE5D0D /* Build configuration list for PBXNativeTarget "Filter" */;
-			buildPhases = (
-				04F51E782B7F7E6500DE5D0D /* Sources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = Filter;
-			productName = Filter;
-			productReference = 04F51E7A2B7F7E6500DE5D0D /* Filter.metallib */;
-			productType = "com.apple.product-type.metal-library";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -132,9 +115,6 @@
 				LastUpgradeCheck = 1530;
 				TargetAttributes = {
 					048C9DD92B7F78770029B9FE = {
-						CreatedOnToolsVersion = 15.3;
-					};
-					04F51E792B7F7E6500DE5D0D = {
 						CreatedOnToolsVersion = 15.3;
 					};
 				};
@@ -155,7 +135,6 @@
 			projectRoot = "";
 			targets = (
 				048C9DD92B7F78770029B9FE /* Demo */,
-				04F51E792B7F7E6500DE5D0D /* Filter */,
 			);
 		};
 /* End PBXProject section */
@@ -179,13 +158,6 @@
 			files = (
 				048C9DE02B7F78780029B9FE /* ContentView.swift in Sources */,
 				048C9DDE2B7F78780029B9FE /* DemoApp.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		04F51E782B7F7E6500DE5D0D /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -245,6 +217,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_COMPILER_FLAGS = "-fcikernel";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -300,6 +273,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_COMPILER_FLAGS = "-fcikernel";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -382,30 +356,6 @@
 			};
 			name = Release;
 		};
-		04F51E7F2B7F7E6500DE5D0D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 64T4PJ8WCZ;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				VERSIONING_SYSTEM = "";
-			};
-			name = Debug;
-		};
-		04F51E802B7F7E6500DE5D0D /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 64T4PJ8WCZ;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				VERSIONING_SYSTEM = "";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -423,15 +373,6 @@
 			buildConfigurations = (
 				048C9DEA2B7F78790029B9FE /* Debug */,
 				048C9DEB2B7F78790029B9FE /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		04F51E7E2B7F7E6500DE5D0D /* Build configuration list for PBXNativeTarget "Filter" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				04F51E7F2B7F7E6500DE5D0D /* Debug */,
-				04F51E802B7F7E6500DE5D0D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
