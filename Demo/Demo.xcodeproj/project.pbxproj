@@ -11,17 +11,16 @@
 		048C9DE02B7F78780029B9FE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048C9DDF2B7F78780029B9FE /* ContentView.swift */; };
 		048C9DE22B7F78790029B9FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 048C9DE12B7F78790029B9FE /* Assets.xcassets */; };
 		048C9DE62B7F78790029B9FE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 048C9DE52B7F78790029B9FE /* Preview Assets.xcassets */; };
-		04F51E732B7F7A9A00DE5D0D /* SkinSmoothingFilter in Frameworks */ = {isa = PBXBuildFile; productRef = 04F51E722B7F7A9A00DE5D0D /* SkinSmoothingFilter */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		045DBAA82B88BF29000DC52B /* Sources */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Sources; path = ../Sources; sourceTree = "<group>"; };
 		048C9DDA2B7F78770029B9FE /* Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		048C9DDD2B7F78780029B9FE /* DemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoApp.swift; sourceTree = "<group>"; };
 		048C9DDF2B7F78780029B9FE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		048C9DE12B7F78790029B9FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		048C9DE32B7F78790029B9FE /* Demo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Demo.entitlements; sourceTree = "<group>"; };
 		048C9DE52B7F78790029B9FE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		04F51E702B7F7A8C00DE5D0D /* SkinSmoothingFilter */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = SkinSmoothingFilter; path = ../SkinSmoothingFilter; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,7 +28,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04F51E732B7F7A9A00DE5D0D /* SkinSmoothingFilter in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -39,7 +37,6 @@
 		048C9DD12B7F78770029B9FE = {
 			isa = PBXGroup;
 			children = (
-				04F51E702B7F7A8C00DE5D0D /* SkinSmoothingFilter */,
 				048C9DDC2B7F78780029B9FE /* Demo */,
 				048C9DDB2B7F78770029B9FE /* Products */,
 				04F51E712B7F7A9A00DE5D0D /* Frameworks */,
@@ -77,6 +74,7 @@
 		04F51E712B7F7A9A00DE5D0D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				045DBAA82B88BF29000DC52B /* Sources */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -98,7 +96,6 @@
 			);
 			name = Demo;
 			packageProductDependencies = (
-				04F51E722B7F7A9A00DE5D0D /* SkinSmoothingFilter */,
 			);
 			productName = Demo;
 			productReference = 048C9DDA2B7F78770029B9FE /* Demo.app */;
@@ -129,6 +126,7 @@
 			);
 			mainGroup = 048C9DD12B7F78770029B9FE;
 			packageReferences = (
+				045DBAA92B88BF6C000DC52B /* XCRemoteSwiftPackageReference "SkinSmoothingFilter" */,
 			);
 			productRefGroup = 048C9DDB2B7F78770029B9FE /* Products */;
 			projectDirPath = "";
@@ -288,7 +286,7 @@
 				CODE_SIGN_ENTITLEMENTS = Demo/Demo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Demo/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = 64T4PJ8WCZ;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
@@ -326,7 +324,7 @@
 				CODE_SIGN_ENTITLEMENTS = Demo/Demo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Demo/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = 64T4PJ8WCZ;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
@@ -379,12 +377,16 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCSwiftPackageProductDependency section */
-		04F51E722B7F7A9A00DE5D0D /* SkinSmoothingFilter */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = SkinSmoothingFilter;
+/* Begin XCRemoteSwiftPackageReference section */
+		045DBAA92B88BF6C000DC52B /* XCRemoteSwiftPackageReference "SkinSmoothingFilter" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/shima11/SkinSmoothingFilter";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
 		};
-/* End XCSwiftPackageProductDependency section */
+/* End XCRemoteSwiftPackageReference section */
 	};
 	rootObject = 048C9DD22B7F78770029B9FE /* Project object */;
 }
