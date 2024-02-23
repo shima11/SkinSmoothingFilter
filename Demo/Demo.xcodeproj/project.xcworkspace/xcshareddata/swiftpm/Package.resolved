@@ -1,0 +1,15 @@
+{
+  "originHash" : "6a197446f8ae23b3f56abea04d7c1c91a4d1fbcd3b7f75f49273fd0a689a4b07",
+  "pins" : [
+    {
+      "identity" : "skinsmoothingfilter",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/shima11/SkinSmoothingFilter",
+      "state" : {
+        "branch" : "main",
+        "revision" : "ce14eb44def22bbe3430176fce87dffbc60e1978"
+      }
+    }
+  ],
+  "version" : 3
+}

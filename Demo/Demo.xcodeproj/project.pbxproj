@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		045DBAAB2B88C035000DC52B /* SkinSmoothingFilter in Frameworks */ = {isa = PBXBuildFile; productRef = 045DBAAA2B88C035000DC52B /* SkinSmoothingFilter */; };
 		048C9DDE2B7F78780029B9FE /* DemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048C9DDD2B7F78780029B9FE /* DemoApp.swift */; };
 		048C9DE02B7F78780029B9FE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048C9DDF2B7F78780029B9FE /* ContentView.swift */; };
 		048C9DE22B7F78790029B9FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 048C9DE12B7F78790029B9FE /* Assets.xcassets */; };
@@ -28,6 +29,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				045DBAAB2B88C035000DC52B /* SkinSmoothingFilter in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,6 +98,7 @@
 			);
 			name = Demo;
 			packageProductDependencies = (
+				045DBAAA2B88C035000DC52B /* SkinSmoothingFilter */,
 			);
 			productName = Demo;
 			productReference = 048C9DDA2B7F78770029B9FE /* Demo.app */;
@@ -387,6 +390,14 @@
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		045DBAAA2B88C035000DC52B /* SkinSmoothingFilter */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 045DBAA92B88BF6C000DC52B /* XCRemoteSwiftPackageReference "SkinSmoothingFilter" */;
+			productName = SkinSmoothingFilter;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 048C9DD22B7F78770029B9FE /* Project object */;
 }
