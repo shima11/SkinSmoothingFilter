@@ -11,7 +11,7 @@ struct ContentView: View {
   @State var inputAmount: Double = 0.5
   @State var inputSharpness: Double = 0.3
   @State var inputRadius: Double = 8.0
-  @State var edittedImage: Image? = nil
+  @State var edittedImage: UIImage? = nil
 
   var body: some View {
     NavigationView {
@@ -25,9 +25,12 @@ struct ContentView: View {
           }
 
           if let edittedImage = edittedImage {
-            edittedImage
+            Image(uiImage: edittedImage)
               .resizable()
               .scaledToFit()
+            Button("Save") {
+              save(image: edittedImage)
+            }
           }
 
           VStack {
@@ -85,10 +88,13 @@ struct ContentView: View {
     filter.inputRadius = inputRadius
 
     if let result = filter.outputImage?.toUIImage() {
-      edittedImage = .init(uiImage: result)
+      edittedImage = result
     }
   }
 
+  private func save(image: UIImage) {
+    UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+  }
 }
 
 extension CIImage {

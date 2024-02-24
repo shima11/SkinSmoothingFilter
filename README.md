@@ -2,6 +2,10 @@
 
 A lightweight SkinSmoothing Filter using Metal and CoreImage.
 
+| Before | After |
+| ------ | ----- |
+| ![Before](sample1.jpg) | ![After](sample2.jpg) |
+
 
 # Requirements
 
