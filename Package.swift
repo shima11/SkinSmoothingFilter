@@ -11,7 +11,8 @@ let package = Package(
   products: [
     .library(
       name: "SkinSmoothingFilter",
-      targets: ["SkinSmoothingFilter"]),
+      targets: ["SkinSmoothingFilter"]
+    ),
   ],
   targets: [
     .target(
@@ -19,6 +20,7 @@ let package = Package(
     ),
     .testTarget(
       name: "SkinSmoothingFilterTests",
-      dependencies: ["SkinSmoothingFilter"]),
+      dependencies: ["SkinSmoothingFilter"]
+    ),
   ]
 )
