@@ -13,6 +13,8 @@ struct ContentView: View {
   @State var inputRadius: Double = 8.0
   @State var edittedImage: UIImage? = nil
 
+  @State var onPress: Bool = false
+
   var body: some View {
     NavigationView {
       ScrollView {
@@ -22,12 +24,28 @@ struct ContentView: View {
             Image(uiImage: originalImage)
               .resizable()
               .scaledToFit()
+              .overlay(
+                ZStack {
+                  if let edittedImage = edittedImage {
+                    Image(uiImage: edittedImage)
+                      .resizable()
+                      .scaledToFit()
+                  }
+                }
+                  .opacity(onPress ? 0 : 1)
+              )
+              .gesture(
+                DragGesture(minimumDistance: 0)
+                  .onChanged { _ in
+                    onPress = true
+                  }
+                  .onEnded { _ in
+                    onPress = false
+                  }
+              )
           }
 
           if let edittedImage = edittedImage {
-            Image(uiImage: edittedImage)
-              .resizable()
-              .scaledToFit()
             Button("Save") {
               save(image: edittedImage)
             }
@@ -35,11 +53,11 @@ struct ContentView: View {
 
           VStack {
             Text("amount: \(inputAmount)")
-            Slider(value: $inputAmount, in: 0...1, step: 0.1)
+            Slider(value: $inputAmount, in: 0...5, step: 0.01)
             Text("sharpness: \(inputSharpness)")
-            Slider(value: $inputSharpness, in: 0...1, step: 0.1)
+            Slider(value: $inputSharpness, in: 0...5, step: 0.01)
             Text("radius: \(inputRadius)")
-            Slider(value: $inputRadius, in: 0...40, step: 1)
+            Slider(value: $inputRadius, in: 0...15, step: 0.1)
           }
           .padding(.top, 24)
           .padding(.horizontal, 24)
