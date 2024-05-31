@@ -97,16 +97,18 @@ struct ContentView: View {
 
   private func perform() {
     guard let uiImage = originalImage else { return }
-    let ciImage = CIImage(image: uiImage)!
+    Task {
+      let ciImage = CIImage(image: uiImage)!
 
-    let filter = SkinSmoothingFilter()
-    filter.inputImage = ciImage
-    filter.inputAmount = inputAmount
-    filter.inputSharpness = inputSharpness
-    filter.inputRadius = inputRadius
+      let filter = SkinSmoothingFilter()
+      filter.inputImage = ciImage
+      filter.inputAmount = inputAmount
+      filter.inputSharpness = inputSharpness
+      filter.inputRadius = inputRadius
 
-    if let result = filter.outputImage?.toUIImage() {
-      edittedImage = result
+      if let result = filter.outputImage?.toUIImage() {
+        edittedImage = result
+      }
     }
   }
 
