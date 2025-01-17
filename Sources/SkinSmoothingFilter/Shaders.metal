@@ -1,7 +1,7 @@
 
 #include <metal_stdlib>
-using namespace metal;
 #include <CoreImage/CoreImage.h>
+using namespace metal;
 
 [[stitchable]] float4 highpass(coreimage::sample_t image, coreimage::sample_t blurredImage) {
   return float4(float3(image.rgb - blurredImage.rgb) + 0.5, image.a);

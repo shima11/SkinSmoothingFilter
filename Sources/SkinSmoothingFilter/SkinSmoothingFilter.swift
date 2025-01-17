@@ -33,9 +33,7 @@ public final class SkinSmoothingFilter: CIFilter {
     let toneFilter = CIFilter(name: "CIToneCurve")!
     toneFilter.setValue(inputImage, forKey: kCIInputImageKey)
     toneFilter.setValue(CIVector(x: 0.0,  y: 0), forKey: "inputPoint0")
-    //              toneFilter.setValue(CIVector(x: 0.25, y: ), forKey: "inputPoint1")
     toneFilter.setValue(CIVector(x: 120/255.0,  y: 146/255.0), forKey: "inputPoint1")
-    //              toneFilter.setValue(CIVector(x: 0.75, y: ), forKey: "inputPoint3")
     toneFilter.setValue(CIVector(x: 1.0,  y: 1.0), forKey: "inputPoint2")
 
     let blendWithMaskFilter = CIFilter(name: "CIBlendWithMask")!
